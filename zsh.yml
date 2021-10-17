@@ -35,7 +35,7 @@
         path: ~/.zshrc
         state: link
         src: ~/.zsh/zshrc
-      when: not zshrc.stat.islnk is defined and zshrc.stat.islnk
+      when: not (zshrc.stat.islnk is defined and zshrc.stat.islnk)
 
     - name: Verify if ~/.oh-my-zsh/custom is a link
       stat:
@@ -46,7 +46,7 @@
       file:
         path: ~/.oh-my-zsh/custom
         state: absent
-      when: not ohmyzsh.stat.islnk is defined and ohmyzsh.stat.islnk
+      when: not (ohmyzsh.stat.islnk is defined and ohmyzsh.stat.islnk)
 
     - name: Link ~/.zsh/oh-my-zsh-custom to ~/.oh-my-zsh/custom
       file:
@@ -54,4 +54,4 @@
         state: link
         src: ~/.zsh/oh-my-zsh-custom
         force: true
-      when: not ohmyzsh.stat.islnk is defined and ohmyzsh.stat.islnk
+      when: not (ohmyzsh.stat.islnk is defined and ohmyzsh.stat.islnk)
