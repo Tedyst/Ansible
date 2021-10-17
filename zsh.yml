@@ -24,6 +24,7 @@
         version: HEAD
         recursive: true
         remote: true
+        force: true
 
     - name: Verify if ~/.zsh/zshrc is linked to ~/.zshrc
       stat:
